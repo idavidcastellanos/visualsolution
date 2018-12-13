@@ -1,0 +1,220 @@
+.body{
+	background: #e76c5c;
+	transition: all 0.60s;
+	padding: 0.8%;
+}
+.Lienzo{
+	width: 80%;
+	margin: 100px auto;
+	background: rgba(235,210,210,.5);
+	min-height: 400px;
+	display:table;
+	position: relative;
+	box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+}
+.Lienzo > div {
+	display: table-cell;
+	vertical-align:middle;
+	text-align: center;
+	color: #fff;
+}
+.Lienzo button{
+	background: transparent;
+	//background-image: linear-gradient(90deg, #e0b722, #ff4931);
+	display: inline-block;
+	padding: 10px 30px;
+	border: 3px solid #fff;
+	border-radius: 20px;
+	background-clip: padding-box;
+	position: relative;
+	cursor: pointer;
+	color: #FFF;
+	//box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+	transition: all .25s;
+
+}
+.Lienzo button.dark{
+	border-color: #ff4931;
+	background: #ff4931;
+}
+.Lienzo .move button.dark{
+	border-color: #e0b722;
+	background: #e0b722;
+}
+.Lienzo .splits p{
+	font-size: 18px;
+}
+.Lienzo button:active{
+	box-shadow: none;
+}
+.Lienzo button:focus{
+	outline: none;
+}
+.Lienzo > .wrapper {
+	position: absolute;
+	width: 40%;
+	height: 120%;
+	top: -10%;
+	left: 5%;
+	background: #fff;
+	box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+	transition: all .5s;
+	color: #303030;
+	overflow: hidden;
+}
+.Lienzo .wrapper > div{
+	padding: 15px 30px 30px;
+	width: 100%;
+	transition: all .5s;
+	background: #fff;
+	width: 100%;
+}
+.Lienzo .wrapper #login{
+	/*padding-top: 20%;*/
+	transform: translateY(20%) translateX(0%);
+}
+.Lienzo .wrapper #registro{
+	transform: translateY(-280%) translateX(50%);
+}
+.Lienzo .wrapper.move #registro{
+	transform: translateY(-70%) translateX(0%);
+}
+.Lienzo .wrapper.move #login{
+	transform: translateY(280%) translateX(-50%);
+}
+.Lienzo .wrapper > div> div {
+	position: relative;
+	margin-bottom: 15px;
+}
+.Lienzo .wrapper label{
+	position: absolute;
+	top: -5px;
+	font-size: 10px;
+	white-space: nowrap;
+	background: #fff;
+	text-align: left;
+	right: 5px;
+	padding: 0 5px;
+	color: #999;
+	pointer-events: none;
+}
+
+
+.Lienzo h2{
+margin-top: 20px;
+font-size: 20px;
+}
+.Lienzo h3{
+margin-top: 20px;
+font-size: 15px;
+}
+.Lienzo .wrapper input{
+	height: 30px;
+	padding: 5px 15px;
+	width: 100%;
+	border: solid 1px #999;
+}
+.Lienzo .wrapper input:focus{
+	outline: none;
+	border-color: #ff4931;
+}
+.Lienzo > .wrapper.move{
+	left: 50%;
+}
+.Lienzo > .wrapper.move input:focus{
+	border-color: #e0b722;
+}
+@media (max-width: 767px){
+	.Lienzo{
+		padding: 5px;
+		margin: 0;
+		width: 100%;
+		display: block;
+	}
+	.Lienzo > .wrapper{
+		position: relative;
+		height: auto;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	.Lienzo > div{
+		display: inline-block;
+	}
+	.splits{
+		width: 50%;
+		background: #fff;
+		float: left;
+	}
+	.splits button{
+		width: 100%;
+		border-radius: 0;
+		background: #505050;
+		border: 0;
+		opacity: .7;
+	}
+	.splits button.active{
+		opacity: 1;
+	}
+	.splits button.active{
+		opacity: 1;
+		background: #ff4931;
+	}
+	.splits.rgstr-btn button.active{
+		background: #e0b722;
+	}
+	.splits p{
+		display: none;
+	}
+	.Lienzo > .wrapper.move{
+		left: 0%;
+	}
+}
+
+
+
+#modal {
+	background: rgba(255,255,255,1);
+	overflow-y: scroll;
+	color: black;
+	position: fixed;
+	z-index: 99999;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	transition: all .5s;
+}
+
+#imagen{
+	position:inherit;
+	width: 70px;
+	height: 70px;
+
+}
+#ListaEstudiantes{
+	list-style: none;
+	display: inline-flex;
+	position: absolute;
+	break-before: right;
+	flex-wrap: wrap;
+	flex: auto;
+	float: left;
+}
+.bntClose{
+
+	border-radius: 20px;
+	left: 100%;
+}
+
+#keyUser{
+font-size: 8px;
+cursor: pointer;
+
+}
+
+#keyUser:hover{
+font-size: 10px;
+cursor: pointer;
+
+}

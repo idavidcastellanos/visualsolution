@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>S.A.C</title>
+
+      <link rel="stylesheet" href="View/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+      <!--
+      Librerias necesarias para la implementacion de Firebase -->
+
+        <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
+
+
+</head>
+
+<body>
+
+  <script  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" ></script>
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+
+
+
+
+<div class="body">
+
+		<div class="Lienzo">
+
+			<div class="login-btn splits">
+				<p>¿Cuenta de Administrador?</p>
+				<button class="active">Ingresar</button>
+			</div>
+
+
+			<div class="rgstr-btn splits">
+				<p> ¿Crear un nuevo usuario?</p>
+				<button>Registrar Alumno</button>
+			</div>
+
+
+			<div class="wrapper">
+
+				<div id="login">
+            <h1>SAC</h1>
+					<h3>School Amis Control</h3>
+<br>
+<br>
+
+
+
+					<div class="mail">
+						<input type="mail" name="" placeholder="example@hotmail.com" id="UserId">
+						<label>Correo</label>
+					</div>
+
+					<div class="Contraseña">
+						<input type="password" name="" placeholder="" id="UserPass">
+						<label>Contraseña</label>
+					</div>
+
+					<!-- <div class="submit"> -->
+          <br>
+          <div>
+						<button class="dark" onclick="LogIn()">Entrar</button>
+
+					</div>
+				</div>
+
+
+				<div id="registro">
+					<h3>Registrar nuevo alumno</h3>
+
+					<div class="Nombre">
+						<input type="text" name="" id="TxtName">
+						<label>Nombres</label>
+					</div>
+
+          <div class="Apellido">
+            <input type="text" name="" id="TxtLastName">
+            <label>Apellidos</label>
+          </div>
+
+					<div class="Correo">
+						<input type="mail" name="" id="TxtEmail">
+						<label>Correo Electronico</label>
+					</div>
+
+					<div class="id">
+						<input type="text" name="" id="TextBoxId">
+						<label>Codigo</label>
+					</div>
+
+            <select id="ListCurso">
+            <option value="1">Primero</option>
+            <option value="2">Segundo</option>
+            <option value="3">Tercero</option>
+            <option value="4">Cuarto</option>
+            <option value="5">Quinto</option>
+            <option value="6">Sexto</option>
+            <option value="7">Septimo</option>
+            <option value="8">Octavo</option>
+            <option value="9">Noveno</option>
+            <option value="10">Decimo</option>
+            <option value="11">Once</option>
+          </select>
+
+          <br><br>
+
+					<div class="submit">
+						<button type="submit" class="dark" onclick="RegistrarUsuario()">Registrar</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+  <div id="modal" style="display:none">
+
+  <button class="bntClose"type="button" name="button" onclick="LogOut()" >x</button>
+  <ul id="ListaEstudiantes">
+
+    <li id="lista">
+          <div class="card" style="max-width:318px;">
+        <img id="imagen" class="card-img-top" src="View/UI/icons/student.png" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">David Castellanos</p>
+        </div>
+      </div>
+    </li>
+
+
+
+  </ul>
+
+  </div>
+
+
+
+	<style type="text/css">
+		.site-link{
+      padding: 5px 15px;
+			position: fixed;
+			z-index: 99999;
+			background: #fff;
+			box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+			right: 30px;
+			bottom: 30px;
+			border-radius: 10px;
+		}
+		.site-link img{
+			width: 30px;
+			height: 30px;
+		}
+	</style>
+
+
+
+    <!-- <script  src="Controller/controller.js"></script> -->
+
+
+    <script>
+
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyA-qPGf0xrv_bD3f6R5Bq1UiVeWrWjk73M",
+          authDomain: "amiscontrol.firebaseapp.com",
+          databaseURL: "https://amiscontrol.firebaseio.com",
+          projectId: "amiscontrol",
+          storageBucket: "amiscontrol.appspot.com",
+          messagingSenderId: "858505990196"
+        };
+    firebase.initializeApp(config);
+
+    </script>
+
+
+      <script  src="Model/Model.js"></script>
+      <script  src="Controller/Controller.js"></script>
+      <script  src="Controller/MainDataBase.js"></script>
+
+
+
+
+</body>
+
+</html>
